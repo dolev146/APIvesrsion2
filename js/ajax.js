@@ -4,4 +4,4 @@ export default function getData(url, cb) {
     xhr.open('GET', url);
     xhr.send();
 }
-//# sourceMappingURL=ajax.js.map
+//# sourceMappingURL=Ajax.js.map
