@@ -1,5 +1,5 @@
 export interface Coin {
     name: string;
-    symbole: string;
+    symbol: string;
     id : string;
 }
