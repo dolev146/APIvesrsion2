@@ -6,7 +6,11 @@ export function showCollaps() {
     function ShowHidenavbar() {
         let navbar = document.querySelector("#navbarColor03");
         navbar.classList.toggle("show");
-        navbar.classList.toggle("");
+        navbar.classList.toggle("collapse");
     }
+}
+export function ShowHideinfo(Moreinfo) {
+    Moreinfo.classList.toggle("Moreinfo-fade-out");
+    Moreinfo.classList.toggle("Moreinfo-fade-in");
 }
 //# sourceMappingURL=showhidenavbar.js.map

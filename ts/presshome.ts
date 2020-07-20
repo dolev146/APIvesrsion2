@@ -1,37 +1,20 @@
 import getAjax from "./Ajax.js";
-import { Coin } from "./coin.model.js";
+import { loadContent } from "./loadContent.js"
 import { getOutlet } from "./getoutlet.js"
-
-
-
-
+import { loadStyle } from "./loadStyle.js"
+import { create100coins } from "./ui.js"
 export function homebtnPress(homebtn: any) {
+    const oldContent = document.querySelector('#homeContainer')
+    oldContent?.remove();
     let outlet: Element | null | any = getOutlet();
-    outlet.innerHTML = "";
     if (homebtn) {
+        loadContent('../components/home/home.component.html', outlet)
+        loadStyle("../components/home/home.component.css")
         homebtn.addEventListener("click", () => {
             getAjax(
                 "https://api.coingecko.com/api/v3/coins/list",
-                firstLoad
+                create100coins
             );
         });
-    }
-
-    function firstLoad(): void {
-        let coins: Coin[] = JSON.parse(this.responseText).slice(0, 100);
-        
-        let cards = coins.map(
-            (coin) => `<div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-                        <div class="card-header">${coin.name.toLocaleUpperCase()}</div>
-                        <div class="card-body">
-                            <h4 class="card-title">${coin.symbol}</h4>
-                            <p class="card-text">Coin id: ${coin.id}.</p>
-                        </div>
-                    </div>`
-        );
-        // document.createElement()
-        if (outlet) {
-            outlet.innerHTML = cards.join("");
-        }
     }
 }

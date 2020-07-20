@@ -1,0 +1,36 @@
+
+#homeContainer {
+    margin-top: 3%;
+    transform: translateX(-20%); 
+    margin-left: auto;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    width: 70vw;
+    height: 68vh;
+    justify-content:space-evenly ;
+}
+
+#homeContainer > div {
+    width: 32.5%;
+}
+
+
+.Moreinfo{
+    transition: opacity 1s;
+}
+
+.Moreinfo-fade-out {
+    opacity: 0;    
+}
+
+.Moreinfo-fade-in {
+    opacity: 5s;
+}
+
+
+
+.btn {
+    margin-bottom: 1em;
+    margin-top: 13px;
+}
